@@ -67,32 +67,14 @@
         </div><!-- end container -->
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div
+                        v-for="house in houses"
+                        class="col-sm-4">
                     <div class="card text-center border-dark mb-3">
-                        <img src="images/home_01.jpg" class="card-img-top" alt="House">
+                        <img src="" class="card-img-top" alt="House">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card text-center">
-                        <img src="images/home_02.jpg" class="card-img-top" alt="House">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card text-center">
-                        <img src="images/home_03.jpg" class="card-img-top" alt="House">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title">{{house.title}}</h5>
+                            <p class="card-text">{{house.shortDescription}}</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
