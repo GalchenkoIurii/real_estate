@@ -1,0 +1,14 @@
+
+header {
+    min-height: 40px;
+    background-color: darkgray;
+    margin-bottom: 30px;
+}
+
+.container {
+
+}
+
+.row {
+    margin-bottom: 40px;
+}
