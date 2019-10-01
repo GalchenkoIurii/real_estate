@@ -27,9 +27,9 @@
     </header>
     <section id="main">
         <div class="container">
-            <h1>Поиск недвижимости</h1>
             <div class="row">
                 <div class="col-sm-6">
+                    <h2>Поиск недвижимости</h2>
                     <form>
                         <div class="form-group">
                             <label for="inputAddress">Address</label>
@@ -63,19 +63,55 @@
                         <button type="submit" class="btn btn-primary">Найти</button>
                     </form>
                 </div>
+                <div class="col-sm-6">
+                    <h2>Выбрать из списка</h2>
+                    <ul class="list-group">
+                        <li
+                            v-for="(house, index) in houses"
+                            v-on:click="selectHouse(index)"
+                            v-bind:class="{'active': selectedItem === index}"
+                            class="list-group-item list-group-item-action pointer">
+                            {{house.title}} - {{house.price}} $
+                        </li>
+                    </ul>
+                </div>
             </div><!-- end row -->
         </div><!-- end container -->
         <div class="container">
+            <h2>{{house.title}}</h2>
+            <div class="row">
+                <div class="col-sm-10">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-sm-4">
+                                <img v-bind:src="house.image" class="card-img" alt="House">
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{house.title}}</h5>
+                                    <p class="card-text">{{house.shortDescription}}</p>
+                                    <p class="card-text">{{house.price}} $</p>
+                                    <a href="#" class="btn btn-primary">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+        <div class="container">
+            <h2>Все предложения</h2>
             <div class="row">
                 <div
                         v-for="house in houses"
                         class="col-sm-4">
-                    <div class="card text-center border-dark mb-3">
-                        <img src="" class="card-img-top" alt="House">
+                    <div class="card text-center mb-5">
+                        <img v-bind:src="house.image" class="card-img-top" alt="House">
                         <div class="card-body">
                             <h5 class="card-title">{{house.title}}</h5>
                             <p class="card-text">{{house.shortDescription}}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <p class="card-text">{{house.price}} $</p>
+                            <a href="#" class="btn btn-primary">Подробнее</a>
                         </div>
                     </div>
                 </div>

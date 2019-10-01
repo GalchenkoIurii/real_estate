@@ -9,10 +9,18 @@ h1 {
     margin-bottom: 40px;
 }
 
+h2 {
+    margin-bottom: 20px;
+}
+
 .container {
 
 }
 
 .row {
     margin-bottom: 50px;
+}
+
+.pointer {
+    cursor: pointer;
 }
