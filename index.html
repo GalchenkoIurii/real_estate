@@ -90,8 +90,12 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{house.title}}</h5>
                                     <p class="card-text">{{house.shortDescription}}</p>
+                                    <p class="card-text"
+                                        v-if="moreInfo">{{house.description}}</p>
                                     <p class="card-text">{{house.price}} $</p>
-                                    <a href="#" class="btn btn-primary">Подробнее</a>
+                                    <a href="#" class="btn btn-primary"
+                                        v-on:click="moreInfo = !moreInfo">
+                                        {{toggleDescription}}</a>
                                 </div>
                             </div>
                         </div>
