@@ -32,21 +32,31 @@
                     <h2>Поиск недвижимости</h2>
                     <form>
                         <div class="form-group">
-                            <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <label for="inputType">Тип</label>
+                            <select id="inputType" class="form-control">
+                                <option selected>Дом</option>
+                                <option>Квартира</option>
+                                <option>Офис</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            <label for="inputName">Название</label>
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputName"
+                                    placeholder="Введите название объекта или район"
+                                    v-model="search"
+                            >
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputCity">City</label>
+                                <label for="inputCity">Город</label>
                                 <input type="text" class="form-control" id="inputCity">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="inputState">State</label>
-                                <select id="inputState" class="form-control">
+                                <label for="inputDistrict">Район</label>
+                                <select id="inputDistrict" class="form-control">
                                     <option selected>Choose...</option>
                                     <option>...</option>
                                 </select>
@@ -67,7 +77,7 @@
                     <h2>Выбрать из списка</h2>
                     <ul class="list-group">
                         <li
-                            v-for="(house, index) in houses"
+                            v-for="(house, index) in filteredItems"
                             v-on:click="selectHouse(index)"
                             v-bind:class="{'active': selectedItem === index}"
                             class="list-group-item list-group-item-action pointer">
